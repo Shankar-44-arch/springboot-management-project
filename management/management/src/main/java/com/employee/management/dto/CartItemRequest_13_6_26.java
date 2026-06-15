@@ -1,12 +1,9 @@
 package com.employee.management.dto;
 
-import com.employee.management.model.Product;
 import lombok.Data;
 
-import java.math.BigDecimal;
-
 @Data
-public class CartItemRequest {
+public class CartItemRequest_13_6_26 {
 
     private String productId;
     private Integer quantity;

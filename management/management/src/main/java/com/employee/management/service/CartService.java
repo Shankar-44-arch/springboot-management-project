@@ -1,9 +1,6 @@
 package com.employee.management.service;
 
-import com.employee.management.dto.CartItemRequest;
-import com.employee.management.dto.CartItemResponse;
-import com.employee.management.dto.EmployeeResponse;
-import com.employee.management.dto.ProductResponse;
+import com.employee.management.dto.CartItemRequest_13_6_26;
 import com.employee.management.model.CartItem;
 import com.employee.management.model.Employee;
 import com.employee.management.model.Product;
@@ -17,7 +14,6 @@ import org.springframework.stereotype.Service;
 import java.math.BigDecimal;
 import java.util.List;
 import java.util.Optional;
-import java.util.stream.Collectors;
 
 @RequiredArgsConstructor
 @Service
@@ -27,7 +23,7 @@ public class CartService {
     private final EmployeeRepository employeeRepository;
     private final CartItemRepository cartItemRepository;
 
-    public boolean addCartItm(String empId, CartItemRequest cartItemRequest){
+    public boolean addCartItm(String empId, CartItemRequest_13_6_26 cartItemRequest){
         Optional<Product> prodOpt = productRepository.findById(Long.valueOf(cartItemRequest.getProductId()));
         if(prodOpt.isEmpty()){
             return false;
