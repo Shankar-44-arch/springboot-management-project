@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Employee</title>
+    <link rel="stylesheet" href="add-emp.css">
+</head>
+<body>
+
+<div class="container">
+    <a href="view-emp.html" class="nav-link">← View Employee List</a>
+    <h2>Employee Registration</h2>
+    
+    <form id="employeeForm">
+        <div class="row">
+            <div class="form-group">
+                <label for="firstName">First Name</label>
+                <input type="text" id="firstName" required>
+            </div>
+            <div class="form-group">
+                <label for="lastName">Last Name</label>
+                <input type="text" id="lastName" required>
+            </div>
+        </div>
+        
+        <div class="row">
+            <div class="form-group">
+                <label for="phone">Phone</label>
+                <input type="tel" id="phone" required>
+            </div>
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" id="email" required>
+            </div>
+        </div>
+
+        <h3>Address Details</h3>
+        <div class="form-group">
+            <label for="street">Street</label>
+            <input type="text" id="street" required>
+        </div>
+        
+        <div class="row">
+            <div class="form-group">
+                <label for="city">City</label>
+                <input type="text" id="city" required>
+            </div>
+            <div class="form-group">
+                <label for="state">State</label>
+                <input type="text" id="state" required>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="form-group">
+                <label for="country">Country</label>
+                <input type="text" id="country" required>
+            </div>
+            <div class="form-group">
+                <label for="zipCode">Zip Code</label>
+                <input type="text" id="zipCode" required>
+            </div>
+        </div>
+
+        <button type="submit">Save Employee</button>
+    </form>
+    
+    <div id="msg" class="message"></div>
+</div>
+
+<script src="add-emp.js"></script>
+    
+</body>
+</html>

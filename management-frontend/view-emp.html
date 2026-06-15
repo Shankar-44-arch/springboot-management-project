@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Employee Directory</title>
+    <link rel="stylesheet" href="view-emp.css">
+</head>
+<body>
+
+<div class="container">
+    <a href="add-emp.html" class="nav-link">+ Add New Employee</a>
+    <h2>Employee Directory</h2>
+
+    <div class="search-container">
+        <input type="number" id="searchId" class="search-input" placeholder="Search by Employee ID...">
+        <button class="btn btn-primary" onclick="searchEmployee()">Search</button>
+        <button class="btn btn-secondary" onclick="resetSearch()">Clear</button>
+    </div>
+
+    <div class="table-responsive">
+        <table>
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Name</th>
+                    <th>Contact Info</th>
+                    <th>Role</th>
+                    <th>Address</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody id="employeeTableBody"></tbody>
+        </table>
+        
+        <div id="noData" class="empty-msg" style="display: none;">No employees found.</div>
+    </div>
+</div>
+
+<div id="editModal" class="modal">
+    <div class="modal-content">
+        <h3>Edit Employee Details</h3>
+        <form id="editForm">
+            <input type="hidden" id="editEmpId">
+            <div class="form-group">
+                <label>First Name</label>
+                <input type="text" id="editFirstName" required>
+            </div>
+            <div class="form-group">
+                <label>Last Name</label>
+                <input type="text" id="editLastName" required>
+            </div>
+            <div class="form-group">
+                <label>Phone</label>
+                <input type="text" id="editPhone" required>
+            </div>
+            <div class="form-group">
+                <label>Email</label>
+                <input type="email" id="editEmail" required>
+            </div>
+            <div class="form-group">
+                <label>User Role</label>
+                <select id="editUserRole">
+                    <option value="EMPLOYEE">EMPLOYEE</option>
+                    <option value="ADMIN">ADMIN</option>
+                </select>
+            </div>
+            
+            <h4>Address</h4>
+            <input type="hidden" id="editAddressId">
+            <div class="form-group">
+                <label>Street</label>
+                <input type="text" id="editStreet" required>
+            </div>
+            <div class="form-group">
+                <label>City</label>
+                <input type="text" id="editCity" required>
+            </div>
+            <div class="form-group">
+                <label>State</label>
+                <input type="text" id="editState" required>
+            </div>
+            <div class="form-group">
+                <label>Country</label>
+                <input type="text" id="editCountry" required>
+            </div>
+            <div class="form-group">
+                <label>Zip Code</label>
+                <input type="text" id="editZipCode" required>
+            </div>
+
+            <div class="modal-actions">
+                <button type="button" class="btn btn-secondary" onclick="closeModal()">Cancel</button>
+                <button type="submit" class="btn btn-primary">Save Changes</button>
+            </div>
+        </form>
+    </div>
+</div>
+
+<script src="view-emp.js"></script>
+
+</body>
+</html>
