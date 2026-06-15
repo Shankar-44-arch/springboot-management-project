@@ -9,6 +9,7 @@
 <body>
 
 <div class="container">
+    
     <a href="add-emp.html" class="nav-link">+ Add New Employee</a>
     <h2>Employee Directory</h2>
 
@@ -19,7 +20,9 @@
     </div>
 
     <div class="table-responsive">
+
         <table>
+
             <thead>
                 <tr>
                     <th>ID</th>
@@ -30,16 +33,21 @@
                     <th>Actions</th>
                 </tr>
             </thead>
+
             <tbody id="employeeTableBody"></tbody>
+
         </table>
         
         <div id="noData" class="empty-msg" style="display: none;">No employees found.</div>
+
     </div>
 </div>
 
 <div id="editModal" class="modal">
+
     <div class="modal-content">
         <h3>Edit Employee Details</h3>
+
         <form id="editForm">
             <input type="hidden" id="editEmpId">
             <div class="form-group">
@@ -93,6 +101,7 @@
                 <button type="button" class="btn btn-secondary" onclick="closeModal()">Cancel</button>
                 <button type="submit" class="btn btn-primary">Save Changes</button>
             </div>
+
         </form>
     </div>
 </div>

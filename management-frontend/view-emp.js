@@ -52,6 +52,7 @@ function renderTable(employees) {
                     <button class="btn btn-danger" onclick="deleteEmployee(${emp.empId})">Delete</button>
                 </td>
             `;
+            
         tbody.appendChild(row);
     });
 }
@@ -59,6 +60,7 @@ function renderTable(employees) {
 // 2. Search Employee by ID
 async function searchEmployee() {
     const id = document.getElementById('searchId').value;
+
     if (!id) {
         alert('Please enter an Employee ID to search');
         return;
@@ -73,6 +75,7 @@ async function searchEmployee() {
         if (!response.ok) throw new Error('Search failed');
         const employee = await response.json();
         renderTable(employee);
+
     } catch (error) {
         renderTable([]);
     }
@@ -97,6 +100,7 @@ async function deleteEmployee(id) {
         } else {
             alert('Failed to delete employee.');
         }
+
     } catch (error) {
         console.error(error);
         alert('Error deleting employee.');
@@ -163,6 +167,7 @@ document.getElementById('editForm').addEventListener('submit', async (e) => {
         } else {
             alert('Failed to update employee records.');
         }
+
     } catch (error) {
         console.error(error);
         alert('An error occurred during update.');
