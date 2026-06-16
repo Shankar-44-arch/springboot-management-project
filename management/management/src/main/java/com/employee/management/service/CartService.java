@@ -1,6 +1,6 @@
 package com.employee.management.service;
 
-import com.employee.management.dto.CartItemRequest_13_6_26;
+import com.employee.management.dto.CartItemRequest;
 import com.employee.management.model.CartItem;
 import com.employee.management.model.Employee;
 import com.employee.management.model.Product;
@@ -23,7 +23,7 @@ public class CartService {
     private final EmployeeRepository employeeRepository;
     private final CartItemRepository cartItemRepository;
 
-    public boolean addCartItm(String empId, CartItemRequest_13_6_26 cartItemRequest){
+    public boolean addCartItm(String empId, CartItemRequest cartItemRequest){
         Optional<Product> prodOpt = productRepository.findById(Long.valueOf(cartItemRequest.getProductId()));
         if(prodOpt.isEmpty()){
             return false;
@@ -80,5 +80,10 @@ public class CartService {
             return true;
         }
         return false;
+    }
+
+    public void clearCart(String employeeId) {
+        employeeRepository.findById(Long.valueOf(employeeId))
+                .ifPresent(cartItemRepository::deleteByEmployee);
     }
 }

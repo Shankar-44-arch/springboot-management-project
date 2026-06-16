@@ -1,7 +1,6 @@
 package com.employee.management.dto;
 
 import com.employee.management.model.Employee;
-import com.employee.management.model.OrderItem;
 import com.employee.management.model.OrderStatus;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -16,8 +15,8 @@ import java.util.List;
 public class OrderResponse {
 
     private Long id;
-    private EmployeeResponse employee;
     private BigDecimal totalAmount;
+    private Employee employee;
     private OrderStatus orderStatus;
     private List<OrderItemDTO> items;
 

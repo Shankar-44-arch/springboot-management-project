@@ -1,6 +1,6 @@
 package com.employee.management.controller;
 
-import com.employee.management.dto.CartItemRequest_13_6_26;
+import com.employee.management.dto.CartItemRequest;
 import com.employee.management.model.CartItem;
 import com.employee.management.service.CartService;
 import lombok.RequiredArgsConstructor;
@@ -21,7 +21,7 @@ public class CartController {
     public ResponseEntity<String> addCart(
             @RequestHeader("X-Employee-ID") String employeeId, // who is requesting for the cart.
             // (cart is related to the employee) just think like "you login so, it need to pass ur id to bring ur cart".
-            @RequestBody CartItemRequest_13_6_26 cartItemRequest){
+            @RequestBody CartItemRequest cartItemRequest){
 
         if(!cartService.addCartItm(employeeId, cartItemRequest)){
             return ResponseEntity.badRequest().body("Product is Out of Stock or the Employee is not Found");
